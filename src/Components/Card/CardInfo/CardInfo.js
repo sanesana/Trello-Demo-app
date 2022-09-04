@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
-  Calendar,
-  CheckSquare,
   List,
-  Tag,
-  Trash,
   Type,
-  X,
 } from "react-feather";
 
 import Modal from "../../Modal/Modal";
@@ -36,6 +31,7 @@ function CardInfo(props) {
 
   useEffect(() => {
     if (props.updateCard) props.updateCard(props.boardId, values.id, values);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
   return (
