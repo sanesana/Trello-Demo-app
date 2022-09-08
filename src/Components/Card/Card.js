@@ -10,7 +10,11 @@ function Card(props) {
   const { id, title } = props.card;
 
   return (
-    <>
+    <div 
+    draggable
+        onDragEnd={() => props.dragEnded(props.boardId, id)}
+        onDragEnter={() => props.dragEntered(props.boardId, id)}
+        >
       {showModal && (
         <CardInfo
           onClose={() => setShowModal(false)}
@@ -21,9 +25,6 @@ function Card(props) {
       )}
       <div
         className="card"
-        draggable
-        onDragEnd={() => props.dragEnded(props.boardId, id)}
-        onDragEnter={() => props.dragEntered(props.boardId, id)}
         onClick={() => setShowModal(true)}
       > 
         <div className="card_title">
@@ -31,7 +32,7 @@ function Card(props) {
         <button className="delete_icon" onClick={() => props.removeCard(props.boardId, id)}><Trash2/></button>
         </div>
         </div>
-    </>
+    </div>
   );
 }
 
