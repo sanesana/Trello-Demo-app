@@ -23,12 +23,6 @@ function CardInfo(props) {
     setValues({ ...values, desc: value });
   };
 
-
-
- 
-
-
-
   useEffect(() => {
     if (props.updateCard) props.updateCard(props.boardId, values.id, values);
     // eslint-disable-next-line react-hooks/exhaustive-deps
